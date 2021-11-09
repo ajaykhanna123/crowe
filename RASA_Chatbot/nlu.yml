@@ -1,0 +1,137 @@
+version: "2.0"
+
+nlu:
+
+- regex: date
+  examples: |
+    - [0-9]{1,2}[A-Za-z]{0,2} [A-Za-z]+ [0-9]{4}
+
+
+
+- lookup: city
+  examples: |
+    - Delhi
+    - Haryana
+    - Karnataka
+    - Kerala
+    - Maharashtra
+    - Punjab
+    - Rajasthan
+    - Tamil Nadu
+    - Telengana
+    - Jammu and Kashmir
+    - Ladakh
+    - Uttar Pradesh
+- intent: date_cases
+  examples: |
+    - What’s the confirmed case count from [1st Oct 2020]{"entity":"date","role":"from"} to [12th Oct 2020]{"entity":"date","role":"to"}?
+    - total covid case count from [4 oct 2020]{"entity":"date","role":"from"} to [9 dec 2020]{"entity":"date","role":"to"}
+    - total confirmed cases from [4 oct 2020]{"entity":"date","role":"from"} to [9 dec 2020]{"entity":"date","role":"to"}
+    - total confirmed cases for date [10 dec 2021]{"entity":"date","role":"from"}
+
+- intent: city_cases
+  examples: |
+    - what's the current confirmed cases in [Delhi]{"entity":"city"}, [Maharashtra]{"entity":"city"} all together?
+    - sum of covid case of [Delhi]{"entity":"city"} , [punjab]{"entity":"city"} combined?
+    - what are covid cases in [Karnataka]{"entity":"city"} , [Delhi]{"entity":"city"} alltogether?
+    - Total covid confirmed cases in  [Karnataka]{"entity":"city"} and [Delhi]{"entity":"city"} alltogether?
+    - how much cases do you get in [Maharashtra]{"entity":"city"} [Punjab]{"entity":"city"} combined ?
+
+- intent: city_cases_separate
+  examples: |
+    - what's the current confirmed cases in [Delhi]{"entity":"city"} and [Maharashtra]{"entity":"city"} ?
+    - covid case of [Delhi]{"entity":"city"} and [punjab]{"entity":"city"} ?
+    - corona cases of [Haryana]{"entity":"city"} and [Delhi] ?
+    - what are covid cases in [Karnataka]{"entity":"city"} and [Delhi]{"entity":"city"} ?
+    - Total covid confirmed cases in  [Karnataka]{"entity":"city"} and [Delhi]{"entity":"city"} separately?
+    - how much cases do you get in [Maharashtra]{"entity":"city"} ,[Punjab]{"entity":"city"}  ?
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
